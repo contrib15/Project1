@@ -1,21 +1,34 @@
+# this job is run at each commit on a branch
 job1_all_times:
       tags:
         - dummy
         # select some runner(s) by runner-tag(s) - mandatory
-        #
       script:
         - echo "job1"
         - date
 
+# this job is run at each commit on a branch if the commit message does NOT contain 'CI_NO_WIN'
 job2_win:
       tags:
         - dummy
         # select some runner(s) by runner-tag(s) - mandatory
-        #
       rules:
         - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_MESSAGE !~ /.*CI_NO_WIN.*/
+        # note: '$CI_PIPELINE_SOURCE == "push"' prevent this job to be duplicated when there is a Merge Request
       script:
         - echo "job2"
         - echo "CI_PIPELINE_SOURCE = $CI_PIPELINE_SOURCE"
         - echo "CI_COMMIT_MESSAGE = $CI_COMMIT_MESSAGE"
         - date
+
+# this job is run periodically
+job3_scheduled:
+      tags:
+        - dummy
+        # select some runner(s) by runner-tag(s) - mandatory
+      rules:
+        - if: $CI_PIPELINE_SOURCE == "schedule"
+      script:
+        - echo "job3"
+        - date
+
