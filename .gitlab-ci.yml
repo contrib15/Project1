@@ -1,9 +1,13 @@
 job1_all_times:
+      tags:
+        - dummy
       script:
         - echo "job1"
         - date
 
 job2_win:
+      tags:
+        - dummy
       rules:
         - if: $CI_COMMIT_MESSAGE != "CI_NO_WIN"
       script:
