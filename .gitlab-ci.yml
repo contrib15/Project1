@@ -21,7 +21,7 @@ job2_win:
         - echo "CI_COMMIT_MESSAGE = $CI_COMMIT_MESSAGE"
         - date
 
-# this job is run periodically
+# this job is run periodically by CI/CD > Schedules
 job3_scheduled:
       tags:
         - dummy
