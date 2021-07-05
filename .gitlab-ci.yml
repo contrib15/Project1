@@ -1,6 +1,7 @@
 job1_all_times:
       tags:
         - dummy
+        # must select some runner(s) with runner-tag(s)
       script:
         - echo "job1"
         - date
@@ -8,6 +9,7 @@ job1_all_times:
 job2_win:
       tags:
         - dummy
+        # must select some runner(s) with runner-tag(s)
       rules:
         - if: $CI_COMMIT_MESSAGE != "CI_NO_WIN"
       script:
