@@ -2,6 +2,7 @@ job1_all_times:
       tags:
         - dummy
         # must select some runner(s) with runner-tag(s)
+        #
       script:
         - echo "job1"
         - date
