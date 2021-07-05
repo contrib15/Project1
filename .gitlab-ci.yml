@@ -13,7 +13,8 @@ job2_win:
         - dummy
         # select some runner(s) by runner-tag(s) - mandatory
       rules:
-        - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_MESSAGE !~ /.*CI_NO_WIN.*/
+        - if: $CI_COMMIT_MESSAGE !~ /.*CI_NO_WIN.*/
+        #- if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_MESSAGE !~ /.*CI_NO_WIN.*/
         # note: '$CI_PIPELINE_SOURCE == "push"' prevent this job to be duplicated when there is a Merge Request
       script:
         - echo "job2"
