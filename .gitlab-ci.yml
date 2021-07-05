@@ -11,6 +11,7 @@ job2_win:
       tags:
         - dummy
         # select some runner(s) by runner-tag(s) - mandatory
+        #
       rules:
         - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_MESSAGE != "CI_NO_WIN"
       script:
