@@ -12,7 +12,7 @@ job2_win:
         - dummy
         # must select some runner(s) with runner-tag(s)
       rules:
-        - if: $CI_COMMIT_MESSAGE != "CI_NO_WIN"
+        - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_MESSAGE != "CI_NO_WIN"
       script:
         - echo "job2"
         - date
