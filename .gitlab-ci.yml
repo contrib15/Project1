@@ -15,4 +15,6 @@ job2_win:
         - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_MESSAGE != "CI_NO_WIN"
       script:
         - echo "job2"
+        - echo "CI_PIPELINE_SOURCE = $CI_PIPELINE_SOURCE"
+        - echo "CI_COMMIT_MESSAGE = $CI_COMMIT_MESSAGE"
         - date
