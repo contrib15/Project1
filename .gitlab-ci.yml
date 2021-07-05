@@ -1,7 +1,7 @@
 job1_all_times:
       tags:
         - dummy
-        # must select some runner(s) with runner-tag(s)
+        # select some runner(s) by runner-tag(s) - mandatory
         #
       script:
         - echo "job1"
@@ -10,7 +10,7 @@ job1_all_times:
 job2_win:
       tags:
         - dummy
-        # must select some runner(s) with runner-tag(s)
+        # select some runner(s) by runner-tag(s) - mandatory
       rules:
         - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_MESSAGE != "CI_NO_WIN"
       script:
